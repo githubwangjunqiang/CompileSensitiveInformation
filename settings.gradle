@@ -1,0 +1,4 @@
+include ':app_timing'
+include ':app_deviceinfo'
+include ':app'
+rootProject.name = "CompileSensitiveInformation"
