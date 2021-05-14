@@ -1,11 +1,10 @@
 package com.xp.app.info
 
-import android.app.ActivityManager
-import android.content.ComponentName
 import android.content.ContentResolver
 import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
@@ -21,7 +20,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import java.io.IOException
 import java.io.OutputStream
-import java.util.jar.Manifest
+import java.util.*
 import kotlin.system.exitProcess
 
 const val TAG = "12345"
@@ -52,6 +51,25 @@ class MainActivity : AppCompatActivity() {
                 android.Manifest.permission.WRITE_EXTERNAL_STORAGE
             ), 1001
         )
+
+
+        val configuration: Configuration = resources.configuration
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+
+            val default = Locale.getDefault()
+
+            val locales = configuration.locales
+            val locale = locales[0]
+            Log.i(TAG, "onCreate: 目前的设备语言是1：${locale}")
+            Log.i(TAG, "onCreate: 目前的设备语言是：${locale.language}")
+        } else {
+            val locale = configuration.locale
+            val language = locale.language
+            Locale.CANADA
+            Log.i(TAG, "onCreate: 目前的设备语言是1：${locale}")
+            Log.i(TAG, "onCreate: 目前的设备语言是：$language")
+        }
+
 
     }
 

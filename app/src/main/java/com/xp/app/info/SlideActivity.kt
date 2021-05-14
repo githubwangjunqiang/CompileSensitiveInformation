@@ -95,6 +95,7 @@ class SlideActivity : AppCompatActivity() {
      * 向集合中添加数据
      */
     private fun addData() {
+
 //        val icons = intArrayOf(
 //            R.mipmap.header_icon_1, R.mipmap.header_icon_2, R.mipmap.header_icon_3,
 //            R.mipmap.header_icon_4, R.mipmap.header_icon_1, R.mipmap.header_icon_2
@@ -118,7 +119,7 @@ class SlideActivity : AppCompatActivity() {
 //            R.mipmap.img_slide_5,
 //            R.mipmap.img_slide_6
 //        )
-        for (i in 0..12) {
+        for (i in 0..10) {
             mList.add("$i")
         }
     }
